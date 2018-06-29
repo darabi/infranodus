@@ -47,6 +47,8 @@ var passport = require('passport');
 var settings = require('./routes/settings');
 var imports = require('./routes/imports');
 
+var cors = require('cors');
+
 var app = express();
 
 var server = http.Server(app);
@@ -56,7 +58,8 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-
+// enable cross-origin requests
+app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 app.use(express.bodyParser());
 app.use(express.favicon());
 app.use(express.logger('dev'));

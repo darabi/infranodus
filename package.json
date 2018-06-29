@@ -8,6 +8,7 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "cheerio": "^1.0.0-rc.2",
+    "cors": "^2.8.4",
     "ejs": "^2.5.7",
     "evernote": "^2.0.5",
     "express": "^3.4.8",
