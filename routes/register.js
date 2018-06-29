@@ -44,11 +44,11 @@ exports.submit = function(req, res, next){
             res.redirect('back');
         }
 
-        // We have a setting for invite-only registration and it doesn't match?
-        else if (options.invite.length > 0 && data.invite != options.invite) {
-            res.error("Please, enter or request your invitation code.");
-            res.redirect('back');
-        }
+        // // We have a setting for invite-only registration and it doesn't match?
+        // else if (options.invite.length > 0 && data.invite != options.invite) {
+        //     res.error("Please, enter or request your invitation code.");
+        //     res.redirect('back');
+        // }
 
         // The user doesn't exist? Then create a new object User with the data from the form
         else {
