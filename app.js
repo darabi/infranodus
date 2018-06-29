@@ -54,12 +54,12 @@ var app = express();
 var server = http.Server(app);
 var io = require('socket.io')(server);
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3001);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 // enable cross-origin requests
-app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
+app.use(cors({ credentials: true, origin: 'http://localhost:' + app.settings.port }));
 app.use(express.bodyParser());
 app.use(express.favicon());
 app.use(express.logger('dev'));
