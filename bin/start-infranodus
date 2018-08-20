@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+sed -i -e "s/NEO4J_USER/$NEO4J_USER/g" $INFRA_HOME/config.json
+sed -i -e "s/NEO4J_PASSWORD/$NEO4J_PASSWORD/g" $INFRA_HOME/config.json
+
+cd $INFRA_HOME
+
+forever --workingDir $INFRA_HOME ./app.js

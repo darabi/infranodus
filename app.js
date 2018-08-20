@@ -59,7 +59,11 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 // enable cross-origin requests
-app.use(cors({ credentials: true, origin: 'http://localhost:' + app.settings.port }));
+var corsOrigins = 'http://localhost:' + app.settings.port;
+if(process.env.CORS !== null && process.env.CORS.trim().length > 0) {
+  corsOrigins = (corsOrigins + ',' + process.env.CORS).trim().split(',');
+}
+app.use(cors({ credentials: true, origin: corsOrigins }));
 app.use(express.bodyParser());
 app.use(express.favicon());
 app.use(express.logger('dev'));
