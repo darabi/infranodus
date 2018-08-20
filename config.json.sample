@@ -1,9 +1,9 @@
 {
     "neo4j":  {
-        "host": "localhost:7474",
-        "bolt": "localhost"
-        "username": "username",
-        "password": "password"
+        "host": "neo4j:7474",
+        "bolt": "neo4j",
+        "username": "NEO4J_USER",
+        "password": "NEO4J_PASSWORD"
     },
 
     "secrets": {
